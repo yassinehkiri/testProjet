@@ -1,0 +1,39 @@
+{% extends 'base-front.html.twig' %}
+{% block title %}Ajouter Employer{% endblock %}
+{% block body %}
+    {{ form_start(f,{'attr':{'novalidate':'novalidate'}}) }}
+    <table>
+         <tr>
+            <td>{{ form_label(f.empno) }}</td>
+            <td> {{ form_widget(f.empno) }}</td>
+            <td> {{ form_errors(f.empno) }}</td>
+        <tr>
+        <tr>
+            <td>{{ form_label(f.ename) }}</td>
+            <td> {{ form_widget(f.ename) }}</td>
+            <td> {{ form_errors(f.ename) }}</td>
+        <tr>
+        <tr>
+            <td>{{ form_label(f.job) }}</td>
+            <td> {{ form_widget(f.job) }}</td>
+            <td> {{ form_errors(f.job) }}</td>
+        <tr>
+        <tr>
+            <td>{{ form_label(f.hiredate) }}</td>
+            <td> {{ form_widget(f.hiredate) }}</td>
+            <td> {{ form_errors(f.hiredate) }}</td>
+        <tr>
+        <tr>
+            <td>{{ form_label(f.sal) }}</td>
+            <td> {{ form_widget(f.sal) }}</td>
+            <td> {{ form_errors(f.sal) }}</td>
+        <tr>
+        <tr>
+            <td>{{ form_label(f.comm) }}</td>
+            <td> {{ form_widget(f.comm) }}</td>
+            <td> {{ form_errors(f.comm) }}</td>
+        <tr>
+        
+    </table>
+    {{ form_end(f) }}
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base-front.html.twig' %}
+{% block title %}Ajouter Categorie{% endblock %}
+
+{% block body %}
+
+    {{ form_start(f,{'attr':{'novalidate':'novalidate'}}) }}
+    <table>
+       
+    <tr>
+           <td>{{ form_label(f.deptno) }}</td>
+           <td> {{ form_widget(f.deptno) }}</td>
+           <td> {{ form_errors(f.deptno) }}</td>
+    <tr>
+        <tr>
+            <td>{{ form_label(f.dname) }}</td>
+            <td> {{ form_widget(f.dname) }}</td>
+            <td> {{ form_errors(f.dname) }}</td>
+        <tr>
+        <tr>
+            <td>{{ form_label(f.loc) }}</td>
+            <td> {{ form_widget(f.loc) }}</td>
+            <td> {{ form_errors(f.loc) }}</td>
+        <tr>
+        
+    </table>
+    {{ form_end(f) }}
+{% endblock %}

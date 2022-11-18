@@ -1,0 +1,66 @@
+{% extends 'base-front.html.twig' %}
+{% block title%} Liste des Departements {% endblock %}
+
+{% block body %}
+    <h2>Departements</h2>
+    <p>Type something in the input field to search the table for your departements:</p>
+    <input id="myInput" type="text" placeholder="Search..">
+    <br><br>
+
+    <table id="categories" class="table table-striped">
+        <thead>
+        <tr>
+
+            <td>deptno</td>
+            <td>dname</td>
+            <td>loc</td>
+        
+            <td></td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for i in c %}
+        <tbody id="myTable">
+            <tr>
+
+
+                <td>{{ i.deptno }}</td>
+                <td>{{ i.dname }}</td>
+                <td>{{ i.loc }}</td>
+
+              
+              
+                 <td>
+                    <form action="{{ path('modifC',{'deptno':i.deptno}) }}">
+                        <button>Modifier</button></form>
+
+                </td>
+
+                
+              <td>
+                    <form action="{{ path('suppC',{'deptno':i.deptno}) }}">
+                        <button>Supprimer</button></form>
+
+                </td>
+
+                
+
+
+
+
+            </tr>
+        </tbody>
+        
+
+        {% endfor %}
+                   <td>
+                    <form action="{{ path('ajoutC') }}">
+                        <button>Ajouter</button></form>
+
+                   </td>
+
+        </tbody>
+
+    </table>
+
+{% endblock %}

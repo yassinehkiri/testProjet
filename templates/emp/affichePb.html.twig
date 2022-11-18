@@ -1,0 +1,76 @@
+{% extends 'base-back.html.twig' %}
+{% block title%} Liste des Managers {% endblock %}
+
+{% block body %}
+    <h2>Produits</h2>
+    <p>Type something in the input field to search for your products:</p>
+    <input id="myInput" type="text" placeholder="Search..">
+    <br><br>
+    <table id="produits" class="table table-striped">
+
+        <thead>
+        <tr>
+
+
+            <td>mgr</td>
+            <td>empno</td>
+            <td>ename</td>
+            <td>job</td>
+            <td>hiredate</td>
+            <td>sal</td>
+            <td>comm</td>
+            <td>Number Employee</td>
+            <td>deptno</td>
+            <td></td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for i in p %}
+        <tbody id="myTable">
+            <tr>
+
+                <td>{{ i.mgr.empno|default('undefined') }}</td>
+                <td>{{ i.empno }}</td>
+                <td>{{ i.ename }}</td>
+                <td>{{ i.job }}</td>
+                <td>{{ i.hiredate|date("d/m/Y")  }}</td>
+                <td>{{ i.sal }}</td>
+                <td>{{ i.comm }}</td>
+                <td>{{i.nbOcc}}</td>
+                <td>{{ i.deptno.deptno }}</td>
+                
+                
+
+             {#
+                <td>
+                    <form action="{{ path('modifP',{'empno':i.empno}) }}">
+                        <button>Modifier</button></form>
+
+                </td>
+        
+
+                <td>
+                    <form action="{{ path('suppP',{'empno':i.empno}) }}">
+                        <button>Supprimer</button></form>
+
+                </td>
+            
+                            
+            </tr>
+            #}
+
+        </tbody>
+
+        {% endfor %}
+
+              {#   <td>
+                    <form action="{{ path('ajoutP') }}">
+                        <button>Ajouter</button></form>
+
+                </td>   #}
+                
+        </tbody>
+
+    </table>
+
+{% endblock %}
